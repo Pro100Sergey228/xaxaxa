@@ -1,0 +1,767 @@
+/*--------------------Стилизация содержимого и фона--------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* import font */
+
+ :root {
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*--------------------Стилизация заголовка и логотипа--------------------*/
+
+.header {
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    display: inline-block;
+    color: var(--white);
+    font-size: 60px;
+    margin-left: 10px;
+}
+
+
+/*--------------------Стилизация меню навигации--------------------*/
+
+.nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.menu a {
+    display: block;
+    padding: 30px;
+    color: var(--white);
+}
+
+.menu a:hover {
+    background-color: var(--gray);
+}
+
+.nav {
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+
+/*--------------------Стилизация меню гамбургера--------------------*/
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+
+/*--------------------Стилизация значка переключаемого меню--------------------*/
+
+.side-menu:checked~nav {
+    max-height: 100%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/*--------------------Добавление отзывчивости--------------------*/
+
+@media (min-width: 768px) {
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+    .menu li {
+        float: left;
+    }
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--gray);
+    }
+    .hamb {
+        display: none;
+    }
+}
+
+
+/*--------------------Фон--------------------*/
+
+.body {
+    background-image: url(./img/фон.jpg);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.body__content {
+    padding-top: 30.7%;
+    align-items: center;
+    text-align: center;
+}
+
+.body__text {
+    color: white;
+}
+
+.text__header {
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.text__body {
+    font-size: 52px;
+}
+
+.text__footer {
+    font-size: 42px;
+}
+
+.about1 {
+    font-size: 20px;
+    display: inline-block;
+    /* Строчно-блочный элемент */
+    background: #04965e;
+    /* Серый цвет фона */
+    color: #fff;
+    /* Белый цвет текста */
+    padding: 1rem 1.5rem;
+    /* Поля вокруг текста */
+    text-decoration: none;
+    /* Убираем подчёркивание */
+    border-radius: 5px;
+}
+
+
+/*--------------------Обо мне--------------------*/
+
+.zagol2 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.last_news_container {
+    background-color: #04965e;
+}
+
+.last_news_title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 0px;
+    text-transform: uppercase;
+    color: #04965e;
+    text-align: center;
+    padding: 20px 0 60px 0;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFF9F2;
+}
+
+.post-wrap {
+    margin-top: 50%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #04965e;
+}
+
+.post-item {
+    padding: 10px;
+}
+
+.post-link {
+    text-decoration: none;
+    display: block;
+}
+
+.post-item-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.post-item img {
+    display: block;
+    width: 100%;
+}
+
+.text-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 86%;
+    padding: 20px;
+    background: #fff;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .9s cubic-bezier(.33, .02, 0, .93);
+}
+
+.post-item:hover .text-wrapper {
+    transform: translate3d(0, 0, 0);
+    transition: transform .9s cubic-bezier(.33, .02, 0, .93) .3s;
+}
+
+.overlay {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 20px;
+    z-index: 5;
+    background: #36383F;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .9s cubic-bezier(.33, .02, 0, .93) .2s;
+}
+
+.post-item:hover .overlay {
+    transform: translate3d(0, 0, 0);
+    transition: transform .9s cubic-bezier(.33, .02, 0, .93);
+}
+
+.post-cat {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.post-title {
+    font-size: 12px;
+    font-weight: 400;
+    color: #4A4A40;
+    font-style: italic;
+}
+
+@media (min-width: 768px) {
+    .post-item {
+        flex-basis: 50%;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .post-item {
+        flex-basis: 33.333333333%;
+        object-fit: cover;
+    }
+}
+
+
+/*--------------------Великие цитаты--------------------*/
+
+.zagol3 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.portfolio {
+    background-color: #04965e;
+    cursor: pointer;
+}
+
+.portfolio ul,
+.portfolio li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.portfolio li {
+    display: inline-block;
+    width: 618px;
+    position: relative;
+}
+
+.portfolio img {
+    max-width: 100%;
+    display: block;
+}
+
+.descr {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding-top: 150px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.portfolio li:hover .descr {
+    opacity: 1;
+    top: 0;
+    transform: scale(1);
+}
+
+
+/*--------------------Походка Ливси--------------------*/
+
+.zagol4 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.intro {
+    max-height: 100hv;
+    overflow: hidden;
+    position: relative;
+}
+
+.intro:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.intro__title {
+    margin: 0;
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.video__media {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*--------------------Друзья--------------------*/
+
+.zagol5 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.footo {
+    background-color: #04965e;
+}
+
+.footo ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footo ul li {
+    position: relative;
+    list-style: none;
+    background: url(/img/Друг\ досье\ билли.jpg);
+    background-size: cover;
+    width: 320px;
+    height: 320px;
+    margin: 0 140px;
+    border-radius: 5%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.footo ul li:hover {
+    box-shadow: rgba(0, 0, 0, 7px #31485C, 0, 0, 0, 7px #fff);
+}
+
+.footo ul li:nth-child(2) {
+    background: url(/img/Друг\ досье\ джимми.jpg);
+    background-size: cover;
+}
+
+.footo ul li:nth-child(3) {
+    background: url(/img/Друг\ досье\ бен.jpg);
+    background-size: cover;
+}
+
+.footo ul li .foto {
+    position: absolute;
+    bottom: 250px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.6s;
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo ul li .foto2 {
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo ul li:hover .foto {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo ul li:hover .foto2 {
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo ul li .foto h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.footo2 {
+    background-color: #04965e;
+}
+
+.footo2 ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footo2 ul li {
+    position: relative;
+    list-style: none;
+    background: url(/img/Друг\ досье\ капитан\ смоллет.jpg);
+    background-size: cover;
+    width: 320px;
+    height: 320px;
+    margin: 0 140px;
+    border-radius: 5%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.footo2 ul li:hover {
+    box-shadow: rgba(0, 0, 0, 7px #31485C, 0, 0, 0, 7px #fff);
+}
+
+.footo2 ul li:nth-child(2) {
+    background: url(/img/Друг\ досье\ сквар.jpg);
+    background-size: cover;
+}
+
+.footo2 ul li .foto {
+    position: absolute;
+    bottom: 250px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.6s;
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo2 ul li .foto2 {
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo2 ul li:hover .foto {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo2 ul li:hover .foto2 {
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo2 ul li .foto h2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*--------------------Враги--------------------*/
+
+.zagol6 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.footo3 {
+    background-color: #04965e;
+}
+
+.footo3 ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footo3 ul li {
+    position: relative;
+    list-style: none;
+    background: url(/img/Зло\ досье\ джон.jpg);
+    background-size: cover;
+    width: 320px;
+    height: 320px;
+    margin: 0 140px;
+    border-radius: 5%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.footo3 ul li:hover {
+    box-shadow: rgba(0, 0, 0, 7px #31485C, 0, 0, 0, 7px #fff);
+}
+
+.footo3 ul li:nth-child(2) {
+    background: url(/img/Зло\ досье\ пес.jpg);
+    background-size: cover;
+}
+
+.footo3 ul li:nth-child(3) {
+    background: url(/img/Зло\ досье\ слепой.jpg);
+    background-size: cover;
+}
+
+.footo3 ul li .foto {
+    position: absolute;
+    bottom: 250px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.80);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.6s;
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo3 ul li .foto2 {
+    transform: translateX(-20%) translateY(-70px);
+}
+
+.footo3 ul li:hover .foto {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo3 ul li:hover .foto2 {
+    transform: translateX(20%) translateY(0px);
+}
+
+.footo3 ul li .foto h2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*--------------------Местоположение--------------------*/
+
+.zagol7 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+/*--------------------Подвал--------------------*/
+
+.fon__carta {
+    background-color: #04965e;
+}
+
+.carta {}
+
+.footer {
+    background-color: #36383F;
+}
+
+.footer__container {
+    padding-top: 1%;
+}
+
+.footer__content {
+    border-top: 1px solid #f9f9f9;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #f9f9f9;
+}
+
+.footer__header {
+    margin-left: 17%;
+}
+
+.footer__logo {
+    width: 150px;
+}
+
+
+/*--------------------Скролл--------------------*/
+
+.section {
+    height: 100hv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
